@@ -1,8 +1,12 @@
 
 const DailyGoals = () => {
     return (
-        <div>
-            daily goals
+        <div className="text-center">
+           <h2 className="text-2xl">Daily Goals</h2>
+
+           <div>
+            <input type="checkbox" />
+           </div>
         </div>
     );
 };

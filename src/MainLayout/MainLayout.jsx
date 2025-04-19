@@ -9,10 +9,13 @@ const MainLayout = () => {
             </header>
 
             {/* main content */}
-            <main>
+            <main className="h-screen my-4">
                 <Outlet />
             </main>
+
+        <div>
         <Navbar />
+        </div>
         </div>
     );
 };
