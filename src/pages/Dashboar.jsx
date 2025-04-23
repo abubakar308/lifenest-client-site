@@ -14,7 +14,7 @@ const year = today.getFullYear();
 const date = today. getDate();
 const currentDate = date + "/" + monthName + "/" + year;
     return (
-        <div>
+        <div className="max-w-sm">
           <header className="flex justify-center gap-3">
         <p>{currentDate}</p>
         <p>{time}</p>
