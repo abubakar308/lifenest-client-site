@@ -19,7 +19,7 @@ const DailyGoals = () => {
 
   return (
     <div className="max-w-md mx-auto m-10 mt-4 text-center">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">🎯 Daily Goals</h2>
+      <h2 className="text-2xl font-bold mb-4">🎯 Daily Goals</h2>
 
       <div className="space-y-3">
         {goalsList.map((goal, index) => (
@@ -29,7 +29,7 @@ const DailyGoals = () => {
               ${
                 goals.includes(goal)
                   ? "bg-green-100 text-green-800 border-green-300"
-                  : "hover:bg-gray-100 border-gray-300"
+                  : "border-gray-300"
               }`}
           >
             <input

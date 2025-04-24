@@ -11,7 +11,7 @@ const MainLayout = () => {
   
         {/* Main Content */}
         <main className="flex-grow">
-          <div className="max-w-md mx-auto my-10">
+          <div className="max-w-md mx-auto">
             <Outlet />
           </div>
         </main>

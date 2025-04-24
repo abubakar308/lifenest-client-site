@@ -13,7 +13,7 @@ const MoodSelector = () => {
 
   return (
     <div className="text-center mt-4">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">How are you feeling?</h2>
+      <h2 className="text-2xl font-bold mb-4">How are you feeling?</h2>
       <div className="flex justify-center gap-4 flex-wrap">
         {moods.map((mood, i) => (
           <button

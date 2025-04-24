@@ -12,8 +12,8 @@ const Journal = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 mt-6 shadow-lg rounded-xl">
-      <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">📝 Daily Journal</h2>
+    <div className="max-w-lg mx-auto p-6 mt-6 rounded-xl">
+      <h2 className="text-2xl font-bold mb-4 text-center">📝 Daily Journal</h2>
 
       <textarea
         rows="8"

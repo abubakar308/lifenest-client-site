@@ -36,20 +36,20 @@ const Profile = () => {
     }, [user]);
 
     return (
-        <div className="text-2xl p-4 max-w-md mx-auto space-y-6">
+        <div className="text-2xl p-4 mb-8 max-w-md mx-auto">
 
   {/* Profile Card */}
   <div className="flex justify-between items-center flex-wrap gap-2">
     <div>
-      <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
+      <h2 className="text-xl font-semibold flex items-center gap-2">
          {user?.displayName}
       </h2>
-      <p className="text-sm text-gray-500">{user?.email}</p>
+      <p className="text-sm">{user?.email}</p>
     </div>
 
     <button
       onClick={handleLogout}
-      className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+      className="bg-red-600 px-4 py-2 rounded hover:bg-red-700 transition"
     >
       Logout
     </button>
@@ -57,17 +57,17 @@ const Profile = () => {
 
         <SalahStreakMessage salahData={salahData} />
     
-        <h2 className="text-2xl font-semibold mb-2 text-center text-gray-400">🕌 Salah Tracker History</h2>
+        <h2 className="text-2xl font-semibold mb-2 text-center">🕌 Salah Tracker History</h2>
     
         {loading ? (
-          <p className="text-center text-gray-400 text-base animate-pulse">Loading salah records...</p>
+          <p className="text-center text-base animate-pulse">Loading salah records...</p>
         ) : salahData?.length > 0 ? (
           salahData.map((salah) => (
             <div
               key={salah._id}
               className="p-4 space-y-3"
             >
-              <p className="text-lg font-bold text-gray-700">📅 {salah?.date}</p>
+              <p className="text-lg font-bold">📅 {salah?.date}</p>
     
               <div className="flex flex-col gap-2">
                 {Object.entries(salah?.salahData || {}).map(([name, done]) => (

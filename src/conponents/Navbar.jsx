@@ -18,8 +18,8 @@ const Navbar = () => {
             to={to}
             className={`flex flex-col items-center px-3 py-1 rounded-lg transition ${
               location.pathname === to
-                ? "text-blue-600 font-semibold"
-                : "text-gray-500 hover:text-blue-500"
+                ? "text-green-400 font-semibold"
+                : "hover:text-green-400"
             }`}
           >
             <span>{icon}</span>

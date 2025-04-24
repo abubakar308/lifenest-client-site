@@ -51,7 +51,7 @@ const SalahTraker = () => {
 
   return (
     <div className="p-4 max-w-sm mx-auto mt-4">
-      <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">🕌 Today's Salah</h2>
+      <h2 className="text-2xl font-bold text-center mb-4">🕌 Today's Salah</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         {["fajar", "dhuhr", "asr", "maghrib", "isha"].map((salah) => (
           <label
