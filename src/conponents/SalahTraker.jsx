@@ -34,6 +34,17 @@ const SalahTraker = () => {
         .catch(err => console.error("Error saving salah data:", err));
       }
     }, [isSubmitted, user, today, salahData]);
+
+    useEffect(() => {
+      fetch(`http://localhost:3000/salah-data/today?email=${user?.email}&date=${today}`)
+        .then(res => res.json())
+        .then(result => {
+          if (result.exists) {
+            setIsSubmitted(true); // disable all checkboxes
+            setSalahData(result.salahData);
+          }
+        });
+    }, [user?.email, today]);
     
   
     return (
