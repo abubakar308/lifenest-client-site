@@ -4,31 +4,44 @@ import SalahTraker from "../conponents/SalahTraker";
 
 
 const Dashboar = () => {
-    const today = new Date();
-    const time = new Date().toLocaleTimeString();
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let monthIndex = today.getMonth()+1;
-    let monthName = monthNames[monthIndex];
-
+  const today = new Date();
+const time = today.toLocaleTimeString();
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+const monthIndex = today.getMonth(); // No need to +1
+const monthName = monthNames[monthIndex];
 const year = today.getFullYear();
-const date = today. getDate();
-const currentDate = date + "/" + monthName + "/" + year;
-    return (
-        <div className="max-w-sm">
-          <header className="flex justify-center gap-3">
-        <p>{currentDate}</p>
-        <p>{time}</p>
-          </header>
-          
-          {/* mood selector */}
-          <MoodSelector />
+const date = today.getDate();
 
-        {/* salah traher */}
-        <SalahTraker />
+const currentDate = `${date} ${monthName}, ${year}`; // Example: 24 April, 2025
 
-        <DailyGoals />
+return (
+  <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
+    
+    {/* Header with Date and Time */}
+    <header className="flex flex-col items-center gap-1">
+      <p className="text-lg font-semibold text-gray-800">{currentDate}</p>
+      <p className="text-sm text-gray-500">{time}</p>
+    </header>
 
-        </div>
+     {/* Salah Tracker */}
+     <div className="bg-gray-50 rounded-md shadow-sm">
+      <SalahTraker />
+    </div>
+
+    {/* Mood Selector */}
+    <div className="bg-gray-50 rounded-md shadow-sm">
+      <MoodSelector />
+    </div>
+
+    {/* Daily Goals */}
+    <div className="bg-gray-50 rounded-md shadow-sm">
+      <DailyGoals />
+    </div>
+
+  </div>
     );
 };
 

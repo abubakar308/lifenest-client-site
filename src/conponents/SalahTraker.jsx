@@ -18,7 +18,7 @@ const SalahTraker = () => {
   // Save to DB
   useEffect(() => {
     if (isSubmitted && user?.email) {
-      fetch("http://localhost:3000/salah-data", {
+      fetch(`${import.meta.env.VITE_API_URL}/salah-data`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -38,7 +38,7 @@ const SalahTraker = () => {
   // Check if already submitted
   useEffect(() => {
     fetch(
-      `http://localhost:3000/salah-data/today?email=${user?.email}&date=${today}`
+      `${import.meta.env.VITE_API_URL}/salah-data/today?email=${user?.email}&date=${today}`
     )
       .then((res) => res.json())
       .then((result) => {
