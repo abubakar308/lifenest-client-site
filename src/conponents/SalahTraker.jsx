@@ -50,16 +50,16 @@ const SalahTraker = () => {
   }, [user?.email, today]);
 
   return (
-    <div className="p-4 max-w-sm mx-auto bg-white shadow-lg rounded-xl mt-4">
-      <h2 className="text-2xl font-bold text-center mb-4">🕌 Today's Salah</h2>
+    <div className="p-4 max-w-sm mx-auto mt-4">
+      <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">🕌 Today's Salah</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         {["fajar", "dhuhr", "asr", "maghrib", "isha"].map((salah) => (
           <label
             key={salah}
-            className={`flex items-center gap-3 p-3 rounded-lg border transition ${
+            className={`flex items-center gap-3 p-3 transition ${
               salahData[salah]
-                ? "bg-green-100 text-green-800 border-green-300"
-                : "hover:bg-gray-100"
+                ? "text-green-800 border-green-300"
+                : "text-gray-400"
             }`}
           >
             <input
@@ -76,7 +76,7 @@ const SalahTraker = () => {
         <button
           type="submit"
           disabled={isSubmitted}
-          className="btn btn-success w-full mt-4 disabled:opacity-50"
+          className="btn btn-success w-full mt-4"
         >
           Save
         </button>

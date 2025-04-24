@@ -57,7 +57,7 @@ const Profile = () => {
 
         <SalahStreakMessage salahData={salahData} />
     
-        <h2 className="text-2xl font-semibold mb-2 text-center">🕌 Salah Tracker History</h2>
+        <h2 className="text-2xl font-semibold mb-2 text-center text-gray-400">🕌 Salah Tracker History</h2>
     
         {loading ? (
           <p className="text-center text-gray-400 text-base animate-pulse">Loading salah records...</p>
@@ -65,7 +65,7 @@ const Profile = () => {
           salahData.map((salah) => (
             <div
               key={salah._id}
-              className="border p-4 rounded-xl bg-white shadow space-y-3"
+              className="p-4 space-y-3"
             >
               <p className="text-lg font-bold text-gray-700">📅 {salah?.date}</p>
     

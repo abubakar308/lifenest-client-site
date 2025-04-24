@@ -3,21 +3,21 @@ import Navbar from "../conponents/Navbar";
 
 const MainLayout = () => {
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col">
+        <div className="min-h-screen flex flex-col">
         {/* Optional Header */}
-        <header className="bg-white shadow-sm p-4 text-center font-semibold text-xl text-gray-700">
+        <header className="bg-blue-500 rounded-t-2xl shadow-sm p-4 text-center font-semibold text-xl">
           LifeNest 🕋
         </header>
   
         {/* Main Content */}
-        <main className="flex-grow p-4">
-          <div className="max-w-md mx-auto bg-white rounded-xl shadow-md p-4">
+        <main className="flex-grow">
+          <div className="max-w-md mx-auto my-10">
             <Outlet />
           </div>
         </main>
   
         {/* Bottom Navbar */}
-        <footer className="bg-white shadow-inner border-t p-2">
+        <footer className="shadow-inner border-t p-2">
           <Navbar />
         </footer>
       </div>

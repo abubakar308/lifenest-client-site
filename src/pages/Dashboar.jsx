@@ -18,26 +18,26 @@ const date = today.getDate();
 const currentDate = `${date} ${monthName}, ${year}`; // Example: 24 April, 2025
 
 return (
-  <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
+  <div className="max-w-md mx-auto p-6 bg-gray-100 space-y-6">
     
     {/* Header with Date and Time */}
     <header className="flex flex-col items-center gap-1">
       <p className="text-lg font-semibold text-gray-800">{currentDate}</p>
-      <p className="text-sm text-gray-500">{time}</p>
+      <p className="text-sm text-gray-800">{time}</p>
     </header>
 
      {/* Salah Tracker */}
-     <div className="bg-gray-50 rounded-md shadow-sm">
+     <div>
       <SalahTraker />
     </div>
 
     {/* Mood Selector */}
-    <div className="bg-gray-50 rounded-md shadow-sm">
+    <div>
       <MoodSelector />
     </div>
 
     {/* Daily Goals */}
-    <div className="bg-gray-50 rounded-md shadow-sm">
+    <div>
       <DailyGoals />
     </div>
 

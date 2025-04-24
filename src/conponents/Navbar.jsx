@@ -10,7 +10,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-md p-2">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-blue-500 rounded-l-xl border-t shadow-md p-2">
       <div className="max-w-sm mx-auto flex justify-around items-center text-2xl">
         {navItems.map(({ to, icon, label }) => (
           <Link
