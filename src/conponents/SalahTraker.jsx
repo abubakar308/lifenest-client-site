@@ -56,9 +56,9 @@ const SalahTraker = () => {
         {["fajar", "dhuhr", "asr", "maghrib", "isha"].map((salah) => (
           <label
             key={salah}
-            className={`flex items-center gap-3 p-3 transition ${
+            className={`flex items-center gap-3 p-3 border rounded-lg transition ${
               salahData[salah]
-                ? "text-green-800 border-green-300"
+                ? "text-green-800 bg-green-100 border-green-300"
                 : "text-gray-400"
             }`}
           >
@@ -66,7 +66,7 @@ const SalahTraker = () => {
               type="checkbox"
               {...register(salah)}
               disabled={isSubmitted}
-              defaultChecked={salahData[salah]}
+              checked={salahData[salah]}
               className="checkbox checkbox-success"
             />
             <span className="capitalize text-lg font-medium">{salah}</span>
@@ -76,9 +76,9 @@ const SalahTraker = () => {
         <button
           type="submit"
           disabled={isSubmitted}
-          className="btn btn-success w-full mt-4"
+          className="btn btn-success w-full rounded-2xl"
         >
-          Save
+        {isSubmitted ? "✅ Salah Submitted" : "Save"}
         </button>
       </form>
     </div>
