@@ -6,6 +6,7 @@ import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import SalahHistory from "../pages/SalahHistory";
 
 const router = createBrowserRouter([
     {
@@ -29,8 +30,32 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes>
                     <Profile />
                 </PrivateRoutes>
+            },
+            {
+                path:"/profile",
+                element: <PrivateRoutes>
+                    <Profile />
+                </PrivateRoutes>
+            },
+            {
+                path:"/profile",
+                element: <PrivateRoutes>
+                    <Profile />
+                </PrivateRoutes>
+            },
+            {
+                path:"/profile",
+                element: <PrivateRoutes>
+                    <Profile />
+                </PrivateRoutes>
             }
         ]
+    },
+    {
+        path:"/salah-history",
+        element: <PrivateRoutes>
+            <SalahHistory />
+        </PrivateRoutes>
     },
     {
         path: "/login",
