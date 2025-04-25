@@ -10,7 +10,7 @@ const PrivateRoutes = ({children}) => {
         return <p className="text-center">loading..</p>
     }
 
-    if(!user){
+    if(!user?.email){
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
 

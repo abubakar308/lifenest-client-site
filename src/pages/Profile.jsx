@@ -13,6 +13,9 @@ const Profile = () => {
     const { logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  const salahInfo = salahData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -62,7 +65,7 @@ const Profile = () => {
         {loading ? (
           <p className="text-center text-base animate-pulse">Loading salah records...</p>
         ) : salahData?.length > 0 ? (
-          salahData.map((salah) => (
+          salahInfo.map((salah) => (
             <div
               key={salah._id}
               className="p-4 space-y-3"
