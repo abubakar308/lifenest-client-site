@@ -5,6 +5,7 @@ import Journal from "../pages/Journal";
 import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -13,15 +14,21 @@ const router = createBrowserRouter([
         children:[
             {
                 path: "/",
-                element: <Dashboar />
+                element: <PrivateRoutes>
+                    <Dashboar />
+                </PrivateRoutes>
             },
             {
                 path: "/journal",
-                element: <Journal />
+                element: <PrivateRoutes>
+                    <Journal />
+                </PrivateRoutes>
             },
             {
                 path:"/profile",
-                element: <Profile />
+                element: <PrivateRoutes>
+                    <Profile />
+                </PrivateRoutes>
             }
         ]
     },

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { auth } from "../firebaseconfig/firebase.config";
 
 const Login = () => {
     const { signIn, googlesignIn } = useContext(AuthContext);

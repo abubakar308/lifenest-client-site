@@ -21,6 +21,12 @@ const DailyGoals = () => {
     <div className="max-w-md mx-auto m-10 mt-4 text-center">
       <h2 className="text-2xl font-bold mb-4">🎯 Daily Goals</h2>
 
+      {goals.length > 0 && (
+        <p className="mt-4 text-green-700 font-medium">
+          ✅ You’ve completed {goals.length} out of {goalsList.length} goals today!
+        </p>
+      )}
+
       <div className="space-y-3">
         {goalsList.map((goal, index) => (
           <label
@@ -43,11 +49,6 @@ const DailyGoals = () => {
         ))}
       </div>
 
-      {goals.length > 0 && (
-        <p className="mt-4 text-green-700 font-medium">
-          ✅ You’ve completed {goals.length} out of {goalsList.length} goals today!
-        </p>
-      )}
     </div>
   );
 };

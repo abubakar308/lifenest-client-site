@@ -32,9 +32,9 @@ return (
     </div>
 
     {/* Mood Selector */}
-    <div>
+    {/* <div>
       <MoodSelector />
-    </div>
+    </div> */}
 
     {/* Daily Goals */}
     <div>
