@@ -63,6 +63,24 @@ const Profile = () => {
       ))}
     </div>
   </div>
+  {/* Trigger Button */}
+<label htmlFor="feedback-modal" className="btn btn-outline btn-info">
+  Give Feedback
+</label>
+{/* Modal */}
+<input type="checkbox" id="feedback-modal" className="modal-toggle" />
+<div className="modal max-w-md mx-auto">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">We value your feedback!</h3>
+    <textarea className="textarea textarea-bordered w-full mt-3" placeholder="Write your thoughts..."></textarea>
+    
+    <div className="modal-action">
+      <label htmlFor="feedback-modal" className="btn">Cancel</label>
+      <label htmlFor="feedback-modal" className="btn btn-success">Submit</label>
+    </div>
+  </div>
+</div>
+
 
       </div>
     );
