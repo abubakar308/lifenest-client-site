@@ -6,7 +6,7 @@ const SalahTraker = () => {
   const [salahData, setSalahData] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { register, handleSubmit } = useForm();
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const today = new Date().toISOString().split("T")[0];
 
   // Submit handler
@@ -48,6 +48,10 @@ const SalahTraker = () => {
         }
       });
   }, [user?.email, today]);
+
+  if(loading){
+    return <p>loading..</p>
+  }
 
   return (
     <div className="p-4 max-w-sm mx-auto mt-4">

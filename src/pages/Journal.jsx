@@ -1,14 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Journal = () => {
   const [entry, setEntry] = useState("");
   const [saved, setSaved] = useState(false);
+  const {user} = useContext(AuthContext);
+  const today = new Date().toISOString().split("T")[0];
+
 
   const handleSave = () => {
-    // এখানে তুমি চাইলে MongoDB/localStorage এ save করতে পারো
-    console.log("Saved entry:", entry);
+
+  const data ={
+    email: user?.email,
+    data: today,
+    entry
+  }
+  fetch(`${import.meta.env.VITE_API_URL}/journal`,
+    {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    }
+  ) .then(res => res.json())
+  .then(result => {
+    console.log("Saved entry:", result);
     setSaved(true);
-    setTimeout(() => setSaved(false), 2000); // 2 sec পর saved message চলে যাবে
+    setEntry('');
+  })
+  .catch(error => {
+    console.error("Error saving entry:", error);
+  });
   };
 
   return (
@@ -25,17 +46,11 @@ const Journal = () => {
 
       <button
         onClick={handleSave}
-        disabled={!entry.trim()}
+        disabled={!entry.trim() || saved}
         className="btn btn-primary mt-4 w-full disabled:bg-gray-400"
       >
         Save Entry
       </button>
-
-      {saved && (
-        <p className="text-green-600 text-center mt-2 font-medium">
-          ✅ Journal saved!
-        </p>
-      )}
     </div>
   );
 };
