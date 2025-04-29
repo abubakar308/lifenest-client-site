@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import SalahStreakMessage from "../conponents/SalahStreakMessage";
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 const Profile = () => {
@@ -20,6 +21,20 @@ const Profile = () => {
       .catch((error) => {
         console.error("Logout failed:", error.message);
       });
+  };
+
+  const handleFeedbackSubmit = () => {
+    const feedback = { email: user?.email, message: feedbackText, date: today };
+    fetch(`${import.meta.env.VITE_API_URL}/feedback`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(feedback)
+    })
+    .then(res => res.json())
+    .then(result => {
+      toast.success("Thanks for your feedback!");
+      setFeedbackText(""); // Clear after submit
+    });
   };
     
 
