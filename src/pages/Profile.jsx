@@ -8,8 +8,10 @@ import toast from "react-hot-toast";
 const Profile = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [feedbackText, setFeedbackText] = useState("")
+    const today = new Date()
 
-
+console.log(feedbackText)
   const navigate = useNavigate();
 
 
@@ -87,11 +89,16 @@ const Profile = () => {
 <div className="modal max-w-md mx-auto">
   <div className="modal-box">
     <h3 className="font-bold text-lg">We value your feedback!</h3>
-    <textarea className="textarea textarea-bordered w-full mt-3" placeholder="Write your thoughts..."></textarea>
+    <textarea
+  value={feedbackText}
+  onChange={(e) => setFeedbackText(e.target.value)}
+  className="textarea textarea-bordered w-full mt-3"
+  placeholder="Write your thoughts..."
+></textarea>
     
     <div className="modal-action">
       <label htmlFor="feedback-modal" className="btn">Cancel</label>
-      <label htmlFor="feedback-modal" className="btn btn-success">Submit</label>
+      <label htmlFor="feedback-modal" onClick={handleFeedbackSubmit} className="btn btn-success">Submit</label>
     </div>
   </div>
 </div>
