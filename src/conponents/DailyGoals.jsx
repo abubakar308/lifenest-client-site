@@ -31,7 +31,7 @@ const DailyGoals = () => {
   const handleSelect = (goal) => {
     if (isSubmitted) return;
     setSelectedGoals((prev) =>
-      prev.includes(goal) ? prev : [...prev, goal]
+      prev.includes(goal) ? prev.filter((g) => g !== goal) : [...prev, goal]
     );
   };
 
@@ -68,10 +68,10 @@ const DailyGoals = () => {
         {goalsList.map((goal, i) => (
           <label
             key={i}
-            className={`flex items-center gap-3 p-3 rounded-lg border transition cursor-pointer ${
+            className={`flex items-center gap-3 p-3 border rounded-lg transition cursor-pointer ${
               selectedGoals.includes(goal)
-                ? "bg-green-100 text-green-800 border-green-300"
-                : "border-gray-300 hover:bg-gray-50"
+                ? "text-green-800 bg-green-100 border-green-300"
+                : "text-gray-700 border-gray-300"
             }`}
           >
             <input
@@ -81,7 +81,7 @@ const DailyGoals = () => {
               disabled={isSubmitted}
               className="checkbox checkbox-success"
             />
-            <span className="text-lg">{goal}</span>
+            <span className="capitalize text-lg font-medium">{goal}</span>
           </label>
         ))}
       </div>
