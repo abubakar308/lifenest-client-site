@@ -71,7 +71,7 @@ const DailyGoals = () => {
             className={`flex items-center gap-3 p-3 border rounded-lg transition cursor-pointer ${
               selectedGoals.includes(goal)
                 ? "text-green-800 bg-green-100 border-green-300"
-                : "text-gray-700 border-gray-300"
+                : "text-gray-400"
             }`}
           >
             <input

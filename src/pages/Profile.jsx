@@ -62,7 +62,7 @@ console.log(feedbackText)
 
   <div className="max-w-md mx-auto border my-6 space-y-4">
     <h2 className="text-xl font-bold">📋 Your History</h2>
-    <div className="space-y-2 bg-white rounded-xl">
+    <div className="space-y-2 rounded-xl">
       {[
         { to: "/salah-history", label: "🕌 Salah History" },
         { to: "/goals-history", label: "🎯 Daily Goals History" },
@@ -72,10 +72,10 @@ console.log(feedbackText)
         <Link
           key={to}
           to={to}
-          className="flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-shadow"
+          className="flex items-center justify-between p-4 rounded-lg hover:shadow-md transition-shadow"
         >
-          <span className="text-gray-800 font-medium">{label}</span>
-          <span className="text-gray-400 text-lg">➡️</span>
+          <span className=" font-medium">{label}</span>
+          <span className=" text-lg">➡️</span>
         </Link>
       ))}
     </div>
